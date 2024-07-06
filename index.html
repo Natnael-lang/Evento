@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <style>
+    /* Reset some default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Navbar styles */
+    body{
+        overflow-x: hidden;
+    }
+    html{
+        overflow-x: hidden;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar-nav {
+      display: flex;
+      list-style-type: none;
+    }
+
+    .nav-item {
+      margin-left: 1rem;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #ccc;
+    }
+
+    .navbar-toggler {
+      display: none;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    @media (max-width: 344px) {
+      .navbar-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-top: 1rem;
+      }
+
+      .nav-item {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .navbar-toggler {
+        display: block;
+      }
+
+      .navbar-nav.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Logo</div>
+    <button class="navbar-toggler">
+      <img src="./cat6.jpg" width="20px"  height="20px"      alt="">
+    </button>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">About</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Services</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarNav = document.querySelector('.navbar-nav');
+
+    navbarToggler.addEventListener('click', () => {
+      navbarNav.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
